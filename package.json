@@ -1,0 +1,28 @@
+{
+  "name": "node-cli",
+  "version": "1.0.0",
+  "description": "cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start:dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedorzvyk/goit-node-hw-01.git"
+  },
+  "author": "Artem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedorzvyk/goit-node-hw-01/issues"
+  },
+  "homepage": "https://github.com/fedorzvyk/goit-node-hw-01#readme",
+  "dependencies": {
+    "calc-js": "^2.0.7",
+    "commander": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
