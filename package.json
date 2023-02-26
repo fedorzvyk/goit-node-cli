@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/fedorzvyk/goit-node-hw-01#readme",
   "dependencies": {
-    "calc-js": "^2.0.7",
     "commander": "^10.0.0"
   },
   "devDependencies": {
