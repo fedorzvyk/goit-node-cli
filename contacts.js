@@ -25,12 +25,20 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
   try {
     const contactList = await listContacts();
+
+    const deletedContact = await contactList.find(
+      contact => contact.id === contactId
+    );
+    if (!deletedContact) {
+      return `Contact with id#${contactId} not found`;
+    }
+
     const newList = await contactList.filter(
       contact => contact.id !== contactId
     );
     await fs.writeFile(contactsPath, JSON.stringify(newList), 'utf8');
-
-    return newList;
+    console.log(`Contact with id#${contactId} was succesfully removed`);
+    return deletedContact;
   } catch (err) {
     console.log(err);
   }
@@ -47,7 +55,8 @@ async function addContact(name, email, phone) {
     };
     contactList.push(newContact);
     await fs.writeFile(contactsPath, JSON.stringify(contactList));
-    return contactList;
+    console.log(`Contact with id#${newContact.id} was succesfully added`);
+    return newContact;
   } catch (err) {
     console.log(err);
   }
